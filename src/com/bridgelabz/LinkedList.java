@@ -29,6 +29,12 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
+    
+     public void pop() {
+
+        head=head.next;
+    }
+
 
     public void insertAfter(int prevNode, int data) {
         Node newNode = new Node(data);
