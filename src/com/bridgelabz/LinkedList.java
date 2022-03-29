@@ -14,8 +14,14 @@ public class LinkedList {
             tail = newNode;
         }
     }
-
-    void display() {
+    public void push(int data) {
+        Node newNode=new Node(data);
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
+    
+    void display(){
         Node temp = head;     //pointing to first node
         while (temp != null) {
             System.out.println(temp.data);
@@ -29,8 +35,7 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
-    public void pop() {
-
+     public void pop() {
         head=head.next;
     }
 
@@ -43,6 +48,29 @@ public class LinkedList {
             newNode.next=tempNode;
         }
 }
+
+      public Node findNode(int data) {
+        Node currentNode = head;
+
+        while(currentNode.next != null) {
+            if(currentNode.data == data) {
+                System.out.println("Element Found "+data);
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+      }
+    public void removeLast(){
+        Node temp=head;
+        Node prevNode = null;
+        while(temp.next!=null){
+            prevNode=temp;
+            temp=temp.next;
+        }
+        prevNode.next=null;
+
+    }
 
     private Node search(int data) {
         Node temp= head;
@@ -65,7 +93,6 @@ public class LinkedList {
         }
         prevNode.next=null;
     }
-
     public Node findNode(int data) {
         Node currentNode = head;
 
@@ -78,6 +105,7 @@ public class LinkedList {
         }
         return null;
     }
+
     public void deleteNode(int data) {
         Node currentNode = head;
         Node previousNode = head;
