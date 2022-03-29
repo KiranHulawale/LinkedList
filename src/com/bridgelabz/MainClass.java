@@ -12,6 +12,7 @@ public class MainClass {
         //list.remove();
         //list.findNode(30);
         list.insertAfter(30, 40);
+        list.deleteNode(40);
         list.display();
     }
 }

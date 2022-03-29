@@ -105,4 +105,18 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void deleteNode(int data) {
+        Node currentNode = head;
+        Node previousNode = head;
+
+        while(currentNode != null) {
+            if(currentNode.data == data) {
+                previousNode.next = currentNode.next;
+                return;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
     }
