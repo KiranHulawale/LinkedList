@@ -9,7 +9,8 @@ public class MainClass {
         list.add(70);
        // list.insertAfter(56, 30);
         //list.pop();
-        list.remove();
+        //list.remove();
+        list.findNode(30);
         list.display();
     }
 }
