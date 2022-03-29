@@ -55,4 +55,14 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void remove(){
+        Node temp=head;
+        Node prevNode = null;
+        while(temp.next!=null){
+            prevNode=temp;
+            temp=temp.next;
+        }
+        prevNode.next=null;
+    }
     }
