@@ -12,7 +12,9 @@ public class MainClass {
         //list.remove();
         //list.findNode(30);
         list.insertAfter(30, 40);
-        list.deleteNode(40);
+       // list.deleteNode(40);
+        list.sortList();
+        System.out.println("Sorted list");
         list.display();
     }
 }
