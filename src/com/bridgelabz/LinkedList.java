@@ -15,6 +15,13 @@ public class LinkedList {
             tail = newNode;
         }
     }
+    public void push(int data) {
+        Node newNode=new Node(data);
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
+    
     void display(){
         Node temp = head;     //pointing to first node
         while (temp != null)
