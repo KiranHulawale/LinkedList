@@ -35,9 +35,7 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
-    
      public void pop() {
-
         head=head.next;
     }
 
@@ -50,6 +48,19 @@ public class LinkedList {
             newNode.next=tempNode;
         }
 }
+
+      public Node findNode(int data) {
+        Node currentNode = head;
+
+        while(currentNode.next != null) {
+            if(currentNode.data == data) {
+                System.out.println("Element Found "+data);
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+      }
     public void removeLast(){
         Node temp=head;
         Node prevNode = null;
@@ -58,6 +69,7 @@ public class LinkedList {
             temp=temp.next;
         }
         prevNode.next=null;
+
     }
 
     private Node search(int data) {
