@@ -78,5 +78,43 @@ public class LinkedList {
         }
         return null;
     }
+ public void deleteNode(int data) {
+        Node currentNode = head;
+        Node previousNode = head;
 
+        while(currentNode != null) {
+            if(currentNode.data == data) {
+                previousNode.next = currentNode.next;
+                return;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+    }
+
+
+    public void sortList()
+    {
+
+        // Node current will point to head
+        Node current = head, index = null;
+        int temp;
+        if (head == null) {
+            return;
+        }
+        else {
+            while (current != null) {
+                index = current.next;
+                while (index != null) {
+                    if (current.data > index.data) {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                current = current.next;
+            }
+        }
+    }
     }
