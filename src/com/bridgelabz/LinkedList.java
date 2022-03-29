@@ -50,6 +50,15 @@ public class LinkedList {
             newNode.next=tempNode;
         }
 }
+    public void removeLast(){
+        Node temp=head;
+        Node prevNode = null;
+        while(temp.next!=null){
+            prevNode=temp;
+            temp=temp.next;
+        }
+        prevNode.next=null;
+    }
 
     private Node search(int data) {
         Node temp= head;
