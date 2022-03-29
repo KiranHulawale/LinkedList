@@ -83,4 +83,26 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void remove(){
+        Node temp=head;
+        Node prevNode = null;
+        while(temp.next!=null){
+            prevNode=temp;
+            temp=temp.next;
+        }
+        prevNode.next=null;
+    }
+    public Node findNode(int data) {
+        Node currentNode = head;
+
+        while(currentNode.next != null) {
+            if(currentNode.data == data) {
+                System.out.println("Element Found "+data);
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+    }
     }
