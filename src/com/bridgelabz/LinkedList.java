@@ -29,4 +29,26 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
+
+    public void insertAfter(int prevNode, int data) {
+        Node newNode = new Node(data);
+        Node searchNode= this.search(prevNode);
+        if(searchNode!=null){
+            Node tempNode = searchNode.next;
+            searchNode.next =newNode;
+            newNode.next=tempNode;
+        }
 }
+
+    private Node search(int data) {
+        Node temp= head;
+        while (temp != null)
+        {
+            if(temp.data == data) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+    }
